@@ -1,0 +1,102 @@
+body {
+  background-size: cover;
+}
+
+.container {
+  background-color: rgb(15, 26, 47);
+  opacity: 0.902;
+  position: absolute;
+  left: 50%;
+  top: 53%;
+  height: 50%;
+  width: 60%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+.login-block {
+  background: #FFFFFF;
+  position: absolute;
+  width: 50%;
+  height: 110%;
+  transform: translate(95%, -5%);
+
+}
+
+p {
+    display: inline-block;
+}
+
+.login-text {
+  font-size: 28px;
+  font-family: "SourceSansPro";
+  color: rgb(62, 73, 94);
+  line-height: 1.25;
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  z-index: 35;
+}
+
+.magebit-login-logo {
+  position: absolute;
+  top: 22%;
+  left: 74%;
+}
+
+.magebit-login-underline {
+  position: absolute;
+  top: 36%;
+  left: 15%;
+  background-color: rgb(73, 171, 254);
+  z-index: 36;
+}
+
+.login-form {
+  position: absolute;
+  top: 45%;
+  left: 15%;
+}
+
+.login-email {
+  font-size: 16px;
+  font-family: "SourceSansPro";
+  color: rgb(132, 149, 183);
+  line-height: 2.813;
+  position: absolute;
+  z-index: 25;
+}
+
+input[type=email] {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #000000;
+}
+
+input[type=email] {
+  width: 145%;
+}
+
+.login-password {
+  font-size: 16px;
+  font-family: "SourceSansPro";
+  color: rgb(132, 149, 183);
+  line-height: 2.813;
+  position: absolute;
+  z-index: 25;
+  top: 100%;
+}
+
+.footer {
+  font-size: 13px;
+  font-family: "SourceSansPro";
+  color: rgb(167, 179, 203);
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 2.692;
+  position: absolute;
+  left: 50%;
+  top: 97%;
+  transform: translate(-50%, -97%);
+  z-index: 3;
+}
