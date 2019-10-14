@@ -1,25 +1,30 @@
 body {
-  background-size: cover;
+    background-size: cover;
+}
+
+img {
+    max-width: 100%;
+    max-height: auto;
 }
 
 .container {
-  background-color: rgb(15, 26, 47);
-  opacity: 0.902;
-  position: absolute;
-  left: 50%;
-  top: 53%;
-  height: 50%;
-  width: 60%;
-  transform: translate(-50%, -50%);
-  font-family: "SourceSansPro";
+    background-color: rgb(15, 26, 47);
+    opacity: 0.902;
+    position: absolute;
+    left: 50%;
+    top: 53%;
+    height: 50%;
+    width: 60%;
+    transform: translate(-50%, -50%);
+    font-family: "SourceSansPro";
 }
 
 .login-signup-block {
-  background: #FFFFFF;
-  position: absolute;
-  width: 50%;
-  height: 110%;
-  transform: translate(95%, -5%);
+    background: #FFFFFF;
+    position: absolute;
+    width: 50%;
+    height: 110%;
+    transform: translate(95%, -5%);
 
 }
 
@@ -28,56 +33,57 @@ p {
 }
 
 .login-text {
-  font-size: 28px;
-  color: rgb(62, 73, 94);
-  line-height: 1.25;
-  position: absolute;
-  top: 15%;
-  left: 15%;
+    font-size: 28px;
+    color: rgb(62, 73, 94);
+    line-height: 1.25;
+    position: absolute;
+    top: 15%;
+    left: 15%;
 }
 
 .login-email,
 .login-password,
 .signup-email,
-.signup-password {
-  font-size: 16px;
-  color: rgb(132, 149, 183);
+.signup-password,
+.signup-name {
+    font-size: 16px;
+    color: rgb(132, 149, 183);
 }
 
 .login-password,
 .signup-password {
-  padding-top: 5px;
+    padding-top: 5px;
 }
 
 #ic-mail,
 #ic-user {
-  position: absolute;
-  margin-left: 115%;
+    position: absolute;
+    margin-left: 115%;
 }
 
-#ic-lock{
-  position: absolute;
-  margin-left: 105%;
+#ic-lock {
+    position: absolute;
+    margin-left: 104%;
 }
 
 .magebit-login-logo {
-  position: absolute;
-  top: 22%;
-  left: 74%;
+    position: absolute;
+    top: 22%;
+    left: 74%;
 }
 
 .magebit-login-underline {
-  position: absolute;
-  top: 36%;
-  left: 15%;
-  background-color: rgb(73, 171, 254);
+    position: absolute;
+    top: 36%;
+    left: 15%;
+    background-color: rgb(73, 171, 254);
 }
 
 .login-form,
 .signup-form {
-  position: absolute;
-  top: 45%;
-  left: 15%;
+    position: absolute;
+    top: 45%;
+    left: 15%;
 }
 
 input[type=email],
@@ -91,102 +97,103 @@ input[type=name] {
     border-bottom: 1px solid #000000;
 }
 
-#login-block a{
-  position:absolute;
-  left: 100%;
-  top: 129%;
-  font-size: 16px;
-  color: rgb(132, 149, 183);
-  text-decoration:none
+#login-block a {
+    position: absolute;
+    left: 100%;
+    top: 129%;
+    font-size: 16px;
+    color: rgb(132, 149, 183);
+    text-decoration: none
 }
 
 #submit-login-btn,
 #submit-signup-btn,
 #signup-btn,
 #login-btn {
-  padding: 20px;
-  display: inline-block;
-  border-radius:33%;
-  font-size: 13px;
-  font-family: "SourceSansPro";
-  position: absolute;
-  font-weight: bold;
-  width: 140px;
-  height: 50px;
-  color: white;
+    padding: 20px;
+    display: inline-block;
+    border-radius: 33%;
+    font-size: 13px;
+    font-family: "SourceSansPro";
+    position: absolute;
+    font-weight: bold;
+    width: 140px;
+    height: 50px;
+    color: white;
 }
 
 #submit-login-btn,
 #submit-signup-btn {
-  border:none;
-  text-align: center;
-  margin-top: 10px;
-  background-color: rgb(248, 154, 53);
+    border: none;
+    text-align: center;
+    margin-top: 10px;
+    background-color: rgb(248, 154, 53);
 }
 
 .login-footer {
-  margin-top: 10px;
+    margin-top: 10px;
 }
 
 #signup-btn,
 #login-btn {
-  top: 70%;
-  border-color: #49abfe;
-  border-width: 3px;
-  background-color: transparent;
+    top: 70%;
+    border-color: #49abfe;
+    border-width: 3px;
+    background-color: transparent;
 }
 
 .signup-head {
-  margin-top: -15px;
+    margin-top: -15px;
 }
-#signup-text{
-  display: block;
-  width:30%;
-  height: 30%;
-  line-height: 23px;
+
+#signup-text {
+    display: block;
+    width: 30%;
+    height: 30%;
+    line-height: 23px;
 }
 
 .login-inactive {
- color: white;
- margin-left: 70px;
- margin-top: 70px;
+    color: white;
+    margin-left: 70px;
+    margin-top: 70px;
 }
 
 .signup-block {
-  visibility: hidden;
+    visibility: hidden;
 }
 
 .signup-inactive {
-  visibility: hidden;
-  margin-top: -22%;
-  margin-left: 64%;
-  color: white;
+    visibility: hidden;
+    margin-top: -22%;
+    margin-left: 64%;
+    color: white;
 }
 
 #login-text {
-  display: block;
-  width:80%;
-  height: 30%;
-  line-height: 23px;
+    display: block;
+    width: 80%;
+    height: 30%;
+    line-height: 23px;
 }
 
 .signup-inactive h2 {
-  color: white;
+    color: white;
 }
 
 .signup-email,
 .signup-password {
-  padding-top: 5px;
+    padding-top: 5px;
 }
 
 .footer {
-  font-size: 13px;
-  color: rgb(167, 179, 203);
-  font-weight: bold;
-  text-transform: uppercase;
-  line-height: 2.692;
-  position: absolute;
-  left: 50%;
-  top: 97%;
-  transform: translate(-50%, -97%);
+    font-size: 13px;
+    color: rgb(167, 179, 203);
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 2.692;
+    position: absolute;
+    left: 50%;
+    top: 97%;
+    transform: translate(-50%, -97%);
 }
