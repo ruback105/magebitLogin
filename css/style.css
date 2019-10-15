@@ -2,11 +2,6 @@ body {
     background-size: cover;
 }
 
-img {
-    max-width: 100%;
-    max-height: auto;
-}
-
 .container {
     background-color: rgb(15, 26, 47);
     opacity: 0.902;

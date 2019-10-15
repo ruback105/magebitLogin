@@ -2,12 +2,33 @@
 <?php
 require_once 'C:/xampp/htdocs/project/oop/core/init.php';
 
-$user = DB::getInstance()->get('users', array('name', '=', 'test'));
-if ($user->count()) {
-    echo 'Success';
-} else {
-    echo 'No user';
+if (Input::exists()) {
+    $validate = new Validation();
+    $validation = $validate->check($_POST, array(
+        'name' => array(
+            'required' => true,
+            'min' => 4,
+            'max' => 64,
+        ),
+        'password' => array(
+            'required' => true,
+            'min' => 6
+        ),
+        'email' => array(
+            'required' => true,
+            'min' => 4,
+            'max' => 30,
+            'unique' => 'users'
+        )
+    ));
+
+    if ($validation->passed()) {
+        echo 'Passed';
+    } else {
+        print_r($validate->errorList());
+    }
 }
+
 ?>
 <html lang="en" dir="ltr">
 <head>
@@ -29,19 +50,19 @@ if ($user->count()) {
                 <img src="img/line-under.jpg" alt="underline" class="magebit-login-underline">
             </div>
             <div class="login-form">
-                <form id="login-block">
+                <form id="login-block" action="" method="post">
                     <div class="login-email">
                         Email<font color="red">*</font>
                         <img id="ic-mail" src="img/ic-mail.jpg" alt="ic-mail">
-                        <input type="email" name="Email">
+                        <input type="email" name="email" id="login-email">
                     </div>
                     <div class="login-password">
                         Password<font color="red">*</font>
                         <img id="ic-lock" src="img/ic-lock.jpg" alt="ic-lock">
-                        <input type="password" name="password">
+                        <input type="password" name="password" id="login-password">
                     </div>
                     <div class="login-footer">
-                        <button id="submit-login-btn">LOGIN</button>
+                        <input type="submit" id="submit-login-btn" value="LOGIN">
                         <a href="google.com">Forgot?</a>
                     </div>
                 </form>
@@ -55,24 +76,24 @@ if ($user->count()) {
                 <img src="img/line-under.jpg" alt="underline" class="magebit-login-underline">
             </div>
             <div class="signup-form">
-                <form id="signup-block">
+                <form id="signup-block" method="post">
                     <div class="signup-name">
                         Name<font color="red">*</font>
                         <img id="ic-user" src="img/ic_user.jpg" alt="ic-user">
-                        <input type="name" name="name">
+                        <input type="name" name="name" id="signup-name" value="<?php echo escape(Input::get('name')); ?>" autocomplete="off">
                     </div>
                     <div class="signup-email">
                         Email<font color="red">*</font>
                         <img id="ic-mail" src="img/ic-mail.jpg" alt="ic-mail">
-                        <input type="email" name="Email">
+                        <input type="email" name="email" id="signup-email" value="<?php echo escape(Input::get('email')); ?>" autocomplete="off">
                     </div>
                     <div class="signup-password">
                         Password<font color="red">*</font>
                         <img id="ic-lock" src="img/ic-lock.jpg" alt="ic-lock">
-                        <input type="password" name="password">
+                        <input type="password" name="password" id="signup-password">
                     </div>
                     <div class="login-footer">
-                        <button id="submit-signup-btn">SIGN UP</button>
+                        <input type="submit" id="submit-signup-btn" value="SIGN UP">
                     </div>
                 </form>
             </div>
