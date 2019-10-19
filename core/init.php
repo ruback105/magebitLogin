@@ -10,15 +10,16 @@ $GLOBALS['config'] = array(
     ),
     'remember' => array(
         'cookie' => 'hash',
-        'cookie_expiry' => 86400,
+        'cookie_expiry' => 1000000,
     ),
     'session' => array(
-        'session_name' => 'user'
+        'session_name' => 'user',
+        'token_name' => 'token'
     )
 );
 
 spl_autoload_register(function ($class) {
-    require_once 'C:/xampp/htdocs/project/oop/classes/' . $class . '.php';
+    require_once 'classes/' . $class . '.php';
 });
 
-require_once 'C:/xampp/htdocs/project/oop/functions/sanitize.php';
+require_once 'functions/sanitize.php';

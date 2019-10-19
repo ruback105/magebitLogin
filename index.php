@@ -1,34 +1,25 @@
 <!DOCTYPE html>
 <?php
-require_once 'C:/xampp/htdocs/project/oop/core/init.php';
+require_once 'core/init.php';
 
 if (Input::exists()) {
-    $validate = new Validation();
-    $validation = $validate->check($_POST, array(
-        'name' => array(
-            'required' => true,
-            'min' => 4,
-            'max' => 64,
-        ),
-        'password' => array(
-            'required' => true,
-            'min' => 6
-        ),
-        'email' => array(
-            'required' => true,
-            'min' => 4,
-            'max' => 30,
-            'unique' => 'users'
-        )
-    ));
+    if (isset($_POST['submit-signup-btn'])) {
+        echo 'test';
+        $validate = new Validation();
+        $validation = $validate->check($_POST, Validation::$signupValidation);
+        if ($validation->passed()) {
+            Validation::signupValidationPassed();
+        }
 
-    if ($validation->passed()) {
-        echo 'Passed';
-    } else {
-        print_r($validate->errorList());
+    } else if (isset($_POST['submit-login-btn'])) {
+        echo 'test';
+        $validate = new Validation();
+        $validation = $validate->check($_POST, Validation::$loginValidation);
+        if ($validation->passed()) {
+            Validation::loginValidationPassed();
+        }
     }
 }
-
 ?>
 <html lang="en" dir="ltr">
 <head>
@@ -50,20 +41,21 @@ if (Input::exists()) {
                 <img src="img/line-under.jpg" alt="underline" class="magebit-login-underline">
             </div>
             <div class="login-form">
-                <form id="login-block" action="" method="post">
+                <form id="login-block" method="post">
                     <div class="login-email">
                         Email<font color="red">*</font>
                         <img id="ic-mail" src="img/ic-mail.jpg" alt="ic-mail">
-                        <input type="email" name="email" id="login-email">
+                        <input type="email" name="email" id="login-email" autocomplete="off"
+                               value="<?php echo escape(Input::get('email')); ?>">
                     </div>
                     <div class="login-password">
                         Password<font color="red">*</font>
                         <img id="ic-lock" src="img/ic-lock.jpg" alt="ic-lock">
-                        <input type="password" name="password" id="login-password">
+                        <input type="password" name="password" id="login-password" autocomplete="off">
                     </div>
                     <div class="login-footer">
-                        <input type="submit" id="submit-login-btn" value="LOGIN">
-                        <a href="google.com">Forgot?</a>
+                        <input type="submit" name="submit-login-btn" id="submit-login-btn" value="LOGIN">
+                        <a href="https://www.magebit.com/">Forgot?</a>
                     </div>
                 </form>
             </div>
@@ -80,20 +72,22 @@ if (Input::exists()) {
                     <div class="signup-name">
                         Name<font color="red">*</font>
                         <img id="ic-user" src="img/ic_user.jpg" alt="ic-user">
-                        <input type="name" name="name" id="signup-name" value="<?php echo escape(Input::get('name')); ?>" autocomplete="off">
+                        <input type="name" name="signup-name" id="signup-name"
+                               value="<?php echo escape(Input::get('signup-name')); ?>" autocomplete="off">
                     </div>
                     <div class="signup-email">
                         Email<font color="red">*</font>
                         <img id="ic-mail" src="img/ic-mail.jpg" alt="ic-mail">
-                        <input type="email" name="email" id="signup-email" value="<?php echo escape(Input::get('email')); ?>" autocomplete="off">
+                        <input type="email" name="signup-email" id="signup-email"
+                               value="<?php echo escape(Input::get('signup-email')); ?>" autocomplete="off">
                     </div>
                     <div class="signup-password">
                         Password<font color="red">*</font>
                         <img id="ic-lock" src="img/ic-lock.jpg" alt="ic-lock">
-                        <input type="password" name="password" id="signup-password">
+                        <input type="password" name="signup-password" id="signup-password">
                     </div>
                     <div class="login-footer">
-                        <input type="submit" id="submit-signup-btn" value="SIGN UP">
+                        <input type="submit" name="submit-signup-btn" id="submit-signup-btn" value="SIGN UP">
                     </div>
                 </form>
             </div>

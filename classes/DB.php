@@ -69,11 +69,6 @@ class DB
         return $this->action('SELECT *', $table, $where);
     }
 
-    public function delete($table, $where)
-    {
-        return $this->action('DELETE', $table, $where);
-    }
-
     public function error()
     {
         return $this->_error;
@@ -109,5 +104,10 @@ class DB
     public function count()
     {
         return $this->_count;
+    }
+
+    public function first()
+    {
+        return $this->results()[0];
     }
 }
