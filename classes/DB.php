@@ -5,6 +5,9 @@ class DB
     private static $_instance = null;
     private $_pdo, $_query, $_error, $_results, $_count = 0;
 
+    /**
+     * DB constructor.
+     */
     private function __construct()
     {
         try {
@@ -14,6 +17,9 @@ class DB
         }
     }
 
+    /**
+     * @return DB|null
+     */
     public static function getInstance()
     {
         if (!isset(self::$_instance)) {
@@ -22,6 +28,12 @@ class DB
         return self::$_instance;
     }
 
+    /**
+     * @param $sql
+     * @param array $params
+     * @return $this
+     *
+     */
     public function query($sql, $params = array())
     {
         $this->_error = false;
@@ -45,6 +57,12 @@ class DB
         return $this;
     }
 
+    /**
+     * @param $action
+     * @param $table
+     * @param array $where
+     * @return $this|bool
+     */
     private function action($action, $table, $where = array())
     {
         if (count($where) === 3) {
@@ -64,21 +82,38 @@ class DB
         return false;
     }
 
+    /**
+     * @param $table
+     * @param $where
+     * @return $this|bool
+     */
     public function get($table, $where)
     {
         return $this->action('SELECT *', $table, $where);
     }
 
+    /**
+     * @return mixed
+     */
     public function error()
     {
         return $this->_error;
     }
 
+    /**
+     * @return mixed
+     *
+     */
     public function results()
     {
         return $this->_results;
     }
 
+    /**
+     * @param $table
+     * @param array $fields
+     * @return bool
+     */
     public function insert($table, $fields = array())
     {
         if (count($fields)) {
@@ -101,11 +136,17 @@ class DB
         return false;
     }
 
+    /**
+     * @return int
+     */
     public function count()
     {
         return $this->_count;
     }
 
+    /**
+     * @return mixed
+     */
     public function first()
     {
         return $this->results()[0];

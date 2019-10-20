@@ -2,11 +2,20 @@
 
 class Hash
 {
+    /**
+     * @param $string
+     * @param string $salt
+     * @return string
+     */
     public static function make($string, $salt = '')
     {
         return hash('sha256', $string . $salt);
     }
 
+    /**
+     * @param $length
+     * @return string
+     */
     public static function salt($length)
     {
         $characterList = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*?";

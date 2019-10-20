@@ -2,6 +2,10 @@
 
 class Input
 {
+    /**
+     * @param string $type
+     * @return bool
+     */
     public static function exists($type = 'post')
     {
         switch ($type) {
@@ -17,6 +21,10 @@ class Input
         }
     }
 
+    /**
+     * @param $item
+     * @return mixed|string
+     */
     public static function get($item)
     {
         if (isset($_POST[$item])) {

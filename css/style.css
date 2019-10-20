@@ -11,7 +11,7 @@ body {
     height: 50%;
     width: 60%;
     transform: translate(-50%, -50%);
-    font-family: "SourceSansPro";
+    font-family: "SourceSansPro", serif;
 }
 
 .login-signup-block {
@@ -63,7 +63,7 @@ p {
 
 .magebit-login-logo {
     position: absolute;
-    top: 22%;
+    top: 20%;
     left: 74%;
 }
 
@@ -109,7 +109,7 @@ input[type=name] {
     display: inline-block;
     border-radius: 33%;
     font-size: 13px;
-    font-family: "SourceSansPro";
+    font-family: "SourceSansPro", serif;
     position: absolute;
     font-weight: bold;
     width: 140px;
@@ -160,7 +160,7 @@ input[type=name] {
 
 .signup-inactive {
     visibility: hidden;
-    margin-top: -22%;
+    margin-top: -20%;
     margin-left: 64%;
     color: white;
 }
@@ -191,4 +191,39 @@ input[type=name] {
     left: 50%;
     top: 97%;
     transform: translate(-50%, -97%);
+}
+
+@media only screen and (max-width: 1320px) {
+    .signup-inactive {
+        margin-top: -27%;
+    }
+
+    .login-inactive {
+        margin-top: 40px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    #signup-btn, #login-btn {
+        top: 80%;
+    }
+
+    input[type="email"], input[type="password"], input[type="name"] {
+        width: 100%;
+    }
+
+    #ic-mail, #ic-user {
+        margin-left: 73%;
+    }
+
+    #ic-lock {
+        margin-left: 62%;
+    }
+}
+
+
+@media only screen and (max-width: 950px) {
+    #login-block a {
+        left: 77%;
+    }
 }

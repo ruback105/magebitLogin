@@ -2,6 +2,10 @@
 
 class Config
 {
+    /**
+     * @param null $path
+     * @return bool|mixed
+     */
     public static function get($path = null)
     {
         if ($path) {

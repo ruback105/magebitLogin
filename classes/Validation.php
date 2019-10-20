@@ -37,6 +37,11 @@ class Validation
         $this->_db = DB::getInstance();
     }
 
+    /**
+     * @param $source
+     * @param array $items
+     * @return $this
+     */
     public function check($source, $items = array())
     {
         foreach ($items as $item => $rules) {
@@ -68,16 +73,25 @@ class Validation
         return $this;
     }
 
+    /**
+     * @param $error
+     */
     public function addError($error)
     {
         $this->_errors[] = $error;
     }
 
-    public function errorList()
+    /**
+     * @return array
+     */
+    public function errorList() //this could be used for debugging
     {
         return $this->_errors;
     }
 
+    /**
+     * @return bool
+     */
     public function passed()
     {
         return $this->_passed;
