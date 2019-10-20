@@ -1,13 +1,16 @@
+var loginEmail = "input#login-email";
+var signupEmail = "input#signup-email";
+
 function validateEmail(email) {
     var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
 }
 
-function validate() {
-    var email = jQuery("input#signup-email").val();
+function validate($email) {
+    var email = jQuery($email).val();
 
     if (!validateEmail(email)) {
-        alert(email + " isn't valid")
+        alert(email + " email isn't valid")
         return true;
     }
     return false;
@@ -32,25 +35,27 @@ jQuery(document).ready(function () {
 
     jQuery("#submit-signup-btn").click(function () {
         var name = jQuery("input#signup-name").val();
-        var email = jQuery("input#signup-email").val();
         var password = jQuery("input#signup-password").val();
         if (name === "" || name.length < 4) {
             alert("Enter name with at least 4 letters");
-        } else if (validate()) {
+            return false;
+        } else if (validate(signupEmail)) {
+            return false;
         } else if (password === "" || password.length < 6) {
             alert("Enter password with at least 6 letters");
+            return false;
         } else {
             jQuery("#signup-block").submit();
         }
     });
 
     jQuery("#submit-login-btn").click(function () {
-        var email = jQuery("input#login-email").val();
         var password = jQuery("input#login-password").val();
-        if (email === "") {
-            alert("Enter email")
+        if (validate(loginEmail)) {
+            return false;
         } else if (password === "") {
             alert("Enter password");
+            return false;
         } else {
             function timeout() {
                 setTimeout(timeout, 1000);

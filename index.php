@@ -4,7 +4,6 @@ require_once 'core/init.php';
 
 if (Input::exists()) {
     if (isset($_POST['submit-signup-btn'])) {
-        echo 'test';
         $validate = new Validation();
         $validation = $validate->check($_POST, Validation::$signupValidation);
         if ($validation->passed()) {
@@ -12,7 +11,6 @@ if (Input::exists()) {
         }
 
     } else if (isset($_POST['submit-login-btn'])) {
-        echo 'test';
         $validate = new Validation();
         $validation = $validate->check($_POST, Validation::$loginValidation);
         if ($validation->passed()) {
